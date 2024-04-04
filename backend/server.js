@@ -35,8 +35,8 @@ app.use('/api/user', userRoutes)
 
 
 // Middleware
-//app.use(notFound)
-//app.use(errorHandler)
+app.use(notFound)
+app.use(errorHandler)
 
 const PORT = process.env.PORT || 3000
 app.listen(
