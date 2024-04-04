@@ -1,22 +1,48 @@
-const express = require('express');
 import cors from 'cors'
-import userRoutes from './routes/userRoutes'
+import express from 'express'
+import dotenv from 'dotenv'
+import connectDB from './config/db.js'
+import userRoutes from './routes/userRoutes.js'
+import { errorHandler, notFound } from './middleware/errorMiddleware.js'
 
-const port = 3000; // or any port you prefer
+// Deployment configuration
+//configure env file in dev mode
+dotenv.config()
 
-const app = express();
+// configure env file in production
+if (process.env.NODE_ENV === undefined) {
+  dotenv.config({ path: '../.env' })
+}
 
+// Connect to database
+connectDB()
+
+const app = express()
+
+// Body parser
+app.use(express.json())
+
+// CORS
 app.use(
-    cors({
-      origin: '*',
-    })
-  )
+  cors({
+    origin: '*',
+  })
+)
 
-
-// Define a route
+// API routes
 app.use('/api/user', userRoutes)
 
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is listening at http://localhost:${port}`);
-});
+
+
+// Middleware
+//app.use(notFound)
+//app.use(errorHandler)
+
+const PORT = process.env.PORT || 3000
+app.listen(
+  PORT,
+  console.log(
+    `Server running in ${process.env.NODE_ENV} mode on port http://localhost:${PORT}`
+      
+  )
+)
