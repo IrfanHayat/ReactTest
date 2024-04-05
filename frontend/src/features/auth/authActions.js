@@ -1,11 +1,11 @@
 import axios from 'axios'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
-const backendURL = 'http://localhost:3000'
+const backendURL = 'http://localhost:3001'
 
 export const userLogin = createAsyncThunk(
   'auth/login',
-  async ({ username, password }, { rejectWithValue }) => {
+  async ({ email, password }, { rejectWithValue }) => {
     try {
       // configure header's Content-Type as JSON
       const config = {
@@ -15,8 +15,8 @@ export const userLogin = createAsyncThunk(
       }
 
       const { data } = await axios.post(
-        `${backendURL}auth/login`,
-        { username, password },
+        `${backendURL}/api/user/login`,
+        { email, password },
         config
       )
 

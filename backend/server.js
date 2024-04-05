@@ -23,30 +23,25 @@ const app = express()
 app.use(express.json())
 
 // CORS
-app.use(
-  cors({
-    origin: '*',
-  })
-)
+const corsOptions = {
+  origin: 'http://localhost:3000', // Replace with your React.js development server URL
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
+app.use(cors(corsOptions));
+
 
 // API routes
 app.use('/api/user', userRoutes)
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '/frontend/build')))
-
-  app.get('*', (req, res) =>
-    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
-  )
-}
 
 
 
 // Middleware
-app.use(notFound)
-app.use(errorHandler)
+//app.use(notFound)
+//app.use(errorHandler)
 
-const PORT = process.env.PORT || 3000
+const PORT =  3001
 app.listen(
   PORT,
   console.log(
