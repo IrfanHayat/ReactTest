@@ -24,7 +24,7 @@ app.use(express.json())
 
 // CORS
 const corsOptions = {
-  origin: 'https://react-test-frontend-black.vercel.app/', // Replace with your React.js development server URL
+  origin: '*', // Replace with your React.js development server URL
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
