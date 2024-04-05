@@ -33,6 +33,37 @@ app.use(cors(corsOptions));
 
 // API routes
 app.use('/api/user', userRoutes)
+app.get('/api/people', async (req, res) => {
+  try {
+    const response = await axios.get('https://swapi.dev/api/people/');
+    res.json(response.data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// API endpoint to fetch films
+app.get('/api/films', async (req, res) => {
+  try {
+    const response = await axios.get('https://swapi.dev/api/films/');
+    res.json(response.data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// API endpoint to fetch starships
+app.get('/api/starships', async (req, res) => {
+  try {
+    const response = await axios.get('https://swapi.dev/api/starships/');
+    res.json(response.data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
 
 
 
