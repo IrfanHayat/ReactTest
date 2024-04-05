@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
-const backendURL = 'http://localhost:3001'
+const backendURL = 'https://react-test1-phi.vercel.app/'
 
 export const userLogin = createAsyncThunk(
   'auth/login',
