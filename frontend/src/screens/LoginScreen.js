@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import Error from '../components/Error';
 import Spinner from '../components/Spinner';
 import { userLogin } from '../features/auth/authActions';
@@ -10,7 +10,7 @@ import {
   TextField,
   Typography,
   Container,
-  Grid,
+  Grid
 } from '@mui/material';
 
 const LoginScreen = () => {
@@ -31,8 +31,8 @@ const LoginScreen = () => {
   };
 
   return (
-    <Container component="main" maxWidth="xs">
-      <div>
+    <Container component="main" maxWidth="xs" style={{ marginTop: '50px' }}>
+      <div style={{ textAlign: 'center' }}>
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
@@ -63,10 +63,14 @@ const LoginScreen = () => {
             variant="contained"
             color="primary"
             disabled={loading}
+            style={{ marginTop: '20px' }}
           >
             {loading ? <Spinner /> : 'Sign In'}
           </Button>
         </form>
+        <Typography style={{ marginTop: '20px' }}>
+          Don't have an account? <Link to="/register">Register</Link>
+        </Typography>
       </div>
     </Container>
   );

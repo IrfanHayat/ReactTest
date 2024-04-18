@@ -42,7 +42,7 @@ const RegisterScreen = () => {
   };
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="xs" style={{ marginTop: '50px' }}>
       <div>
         <Typography component="h1" variant="h5">
           Sign up
@@ -88,6 +88,7 @@ const RegisterScreen = () => {
             </Grid>
           </Grid>
           <Button
+           style={{ marginTop: '20px' }}
             type="submit"
             fullWidth
             variant="contained"

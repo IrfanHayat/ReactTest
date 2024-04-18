@@ -4,10 +4,9 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom'
-import Header from './components/Header'
+
 import LoginScreen from './screens/LoginScreen'
 import RegisterScreen from './screens/RegisterScreen'
-import ProfileScreen from './screens/ProfileScreen'
 import HomeScreen from './screens/HomeScreen'
 
 import './App.css'
@@ -15,7 +14,7 @@ import './App.css'
 function App() {
   return (
     <Router>
-      <Header />
+      
       <main className='container content'>
         <Routes>
           <Route path='/' element={<HomeScreen />} />
