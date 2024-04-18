@@ -23,7 +23,9 @@ const app = express()
 app.use(express.json())
 
 // CORS
-app.use(cors());
+app.use(cors({
+  origin: 'https://react-test-frontend-black.vercel.app',
+}));
 
 
 
