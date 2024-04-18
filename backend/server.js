@@ -23,12 +23,10 @@ const app = express()
 app.use(express.json())
 
 // CORS
-app.use(cors({
-  origin: 'https://react-test-frontend-8n9ppyjv2-irfanhayats-projects.vercel.app',
-}));
+app.use(cors());
 
 
-app.use(cors(corsOptions));
+
 
 
 // API routes
