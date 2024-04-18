@@ -20,7 +20,7 @@ app.use(express.json());
 // CORS configuration
 app.use(
   cors({
-    origin: ['https://react-test-frontend-black.vercel.app/', 'https://react-test1-phi.vercel.app'],
+    origin: 'https://react-test-frontend-black.vercel.app/',
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow other HTTP methods as needed
     credentials: true, // Allow sending cookies
     optionsSuccessStatus: 200 // Some legacy browsers (IE11, various SmartTVs) choke on 204
