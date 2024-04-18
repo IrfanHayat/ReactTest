@@ -23,10 +23,10 @@ const app = express()
 app.use(express.json())
 
 // CORS
-const corsOptions = {
-  origin: '*', // Replace with your React.js development server URL
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-};
+app.use(cors({
+  origin: 'https://react-test-frontend-8n9ppyjv2-irfanhayats-projects.vercel.app',
+}));
+
 
 app.use(cors(corsOptions));
 
