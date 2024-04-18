@@ -11,6 +11,7 @@ export const userLogin = createAsyncThunk(
       const config = {
         headers: {
           'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': 'https://react-test-frontend-black.vercel.app',
         },
       }
 
@@ -42,6 +43,7 @@ export const registerUser = createAsyncThunk(
       const config = {
         headers: {
           'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': 'https://react-test-frontend-black.vercel.app',
         },
       }
 
